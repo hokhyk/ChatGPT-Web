@@ -105,14 +105,14 @@ export function LoginCard(props: {
             key: 'password',
             label: '密码登录',
           },
-          {
-            key: 'code',
-            label: '邮箱登录',
-          },
-          {
-            key: 'register',
-            label: '注册账号',
-          },
+          // {
+          //   key: 'code',
+          //   label: '邮箱登录',
+          // },
+          // {
+          //   key: 'register',
+          //   label: '注册账号',
+          // },
         ]}
       />
       <ProFormText
@@ -121,12 +121,12 @@ export function LoginCard(props: {
           prefix: <MailOutlined />
         }}
         name="account"
-        placeholder="邮箱"
+        placeholder="手机号码"
         rules={[
           {
             required: true,
-            message: '请输入电子邮箱',
-            pattern: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/
+            message: '请输入手机号',
+            pattern: /^1\d{10}$/
           }
         ]}
       />

@@ -697,7 +697,7 @@ router.post('/roomcreate', async (req, res) => {
         user_id: user_id,
     };
     const addRes = await models_1.roomModel.addRoom(insertRoomData);
-    console.log('room create---', addRes)
+    // console.log('room create---', addRes)
     res.json((0, utils_1.httpBody)(0, addRes, '创建room成功'));
 });
 

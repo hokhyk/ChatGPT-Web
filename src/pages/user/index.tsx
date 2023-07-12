@@ -151,7 +151,7 @@ function UserPage() {
               </Space>
             </div>
             {/* 邀请区域 */}
-            <div className={styles.userPage_card}>
+            {/* <div className={styles.userPage_card}>
               <h4>邀请链接/二维码</h4>
               <div className={styles.userPage_invite}>
                 <QRCode
@@ -172,7 +172,7 @@ function UserPage() {
                   />
                 </div>
               </div>
-            </div>
+            </div> */}
           </Space>
         </div>
       </Layout>
