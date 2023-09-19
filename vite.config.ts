@@ -28,6 +28,13 @@ export default defineConfig({
     }
   },
   server: {
-    host: '0.0.0.0'
+    host: '0.0.0.0',
+    // proxy: {
+    //   '/api': {
+    //     target: 'http://10.0.40.200:8979',
+    //     ws: false,
+    //     changeOrigin: true,
+    //     rewrite: path => path.replace(/^\/api/, '')
+    //   }
   }
 })
