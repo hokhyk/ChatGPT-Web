@@ -39,7 +39,7 @@ interface Config {
 }
 
 // 获取配置信息的函数
-function getConfig(key?: keyof Config): any {
+export function getConfig(key?: keyof Config): any {
   const config: Config = {
     port: 3200,
     mysql_config: {
@@ -80,5 +80,5 @@ function getConfig(key?: keyof Config): any {
 }
 
 export default {
-  getConfig,
+  getConfig
 };
