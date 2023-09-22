@@ -2,7 +2,7 @@ import express from "express"
 import { Application, Request, Response } from "express"
 import cors from "cors"
 import routers from "./routers"
-import db from "./models/db"
+import { initDB } from "./models/db"
 import config from "./config"
 import verify from "./middlewares/verify"
 import { globalScheduleJobs } from "./helpers/schedule"
@@ -19,7 +19,7 @@ app.use(cors({
 app.use(verify);
 
 // 链接mysql
-db();
+initDB();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
