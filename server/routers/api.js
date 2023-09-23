@@ -74,6 +74,8 @@ router.get('/send_sms', async (req, res) => {
 
     res.json((0, utils_1.httpBody)(0, '发送成功'));
 });
+
+
 // 登陆注册
 router.post('/login', async (req, res) => {
     const { account, code, password } = req.body;
@@ -207,6 +209,8 @@ router.get('/user/info', async (req, res) => {
         is_signin: isSignin ? 1 : 0
     }));
 });
+
+
 // 修改用户密码
 router.put('/user/password', async (req, res) => {
     const { account, code, password } = req.body;
@@ -255,6 +259,8 @@ router.get('/signin/list', async (req, res) => {
     });
     res.status(200).json((0, utils_1.httpBody)(0, list));
 });
+
+
 // 绘画
 router.post('/images/generations', async (req, res) => {
     const user_id = req?.user_id;
@@ -710,6 +716,8 @@ router.post('/chat/completions', async (req, res) => {
     res.status(chat.status).json(data);
 });
 
+
+
 //创建room
 router.post('/roomcreate', async (req, res) => {
     const user_id = req?.user_id;
@@ -730,7 +738,6 @@ router.post('/roomcreate', async (req, res) => {
     console.log('room create---', addRes)
     res.json((0, utils_1.httpBody)(0, addRes, '创建room成功'));
 });
-
 //更新room status
 router.post('/roomupdatestatus', async (req, res) => {
     const user_id = req?.user_id;
@@ -750,6 +757,8 @@ router.post('/roomupdatestatus', async (req, res) => {
     res.json((0, utils_1.httpBody)(0, updateRes, '更新room status成功'));
 });
 
+
+
 //更新room title
 router.post('/roomupdatetitle', async (req, res) => {
     const user_id = req?.user_id;
@@ -767,8 +776,6 @@ router.post('/roomupdatetitle', async (req, res) => {
 
     res.json((0, utils_1.httpBody)(0, updateRes, '更新room title成功'));
 });
-
-
 //更新message status
 router.post('/messageupdatestatus', async (req, res) => {
     const user_id = req?.user_id;
@@ -787,6 +794,8 @@ router.post('/messageupdatestatus', async (req, res) => {
     res.json((0, utils_1.httpBody)(0, updateRes, '更新room title成功'));
 });
 
+
+
 //删除message
 router.post('/delmessage', async (req, res) => {
     const user_id = req?.user_id;
@@ -800,7 +809,6 @@ router.post('/delmessage', async (req, res) => {
 
     res.json((0, utils_1.httpBody)(0, delRes, '删除message成功'));
 });
-
 //得到所有rooms
 router.get('/getrooms', async (req, res, next) => {
     const user_id = req?.user_id;
@@ -816,6 +824,8 @@ router.get('/getrooms', async (req, res, next) => {
 
     res.json((0, utils_1.httpBody)(0, rooms, '获取rooms成功'));
 });
+
+
 
 //根据room_id获取所有messages
 router.get('/chathistory', async (req, res, next) => {
@@ -833,8 +843,6 @@ router.get('/chathistory', async (req, res, next) => {
 
     res.json((0, utils_1.httpBody)(0, roomMesages, '获取roomMessages成功'));
 });
-
-
 // 获取商品
 router.get('/product', async (req, res, next) => {
     const { page, page_size } = (0, utils_1.pagingData)({
@@ -853,6 +861,8 @@ router.get('/product', async (req, res, next) => {
         pay_types
     }));
 });
+
+
 // 使用卡密
 router.post('/use_carmi', async (req, res, next) => {
     const user_id = req?.user_id;
@@ -943,6 +953,8 @@ router.get('/turnover', async (req, res, next) => {
     });
     res.json((0, utils_1.httpBody)(0, userTurnovers));
 });
+
+
 // 签到
 router.post('/signin', async (req, res, next) => {
     const user_id = req?.user_id;
@@ -1107,6 +1119,8 @@ router.post('/pay/precreate', async (req, res, next) => {
     });
     res.json((0, utils_1.httpBody)(0, responseData));
 });
+
+
 // 支付通知
 router.all('/pay/notify', async (req, res, next) => {
     const checkNotifySign = async (payment_id, data, channel) => {
